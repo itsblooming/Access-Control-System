@@ -5,23 +5,21 @@ from sklearn.svm import OneClassSVM
 from sklearn.cluster import DBSCAN
 
 def analyze_user_behavior(data):
-    print("Raw data:", data)  # Вывод входных данных
+    print("Raw data:", data)  
 
-    # Проверяем, что data — список или массив
     if not isinstance(data, (list, np.ndarray)) or len(data) == 0:
         print("Error: Data should be a non-empty list or array of tuples/lists.")
         return
 
-    data = np.array(data, dtype=np.float64)  # Преобразуем в массив numpy
+    data = np.array(data, dtype=np.float64)  
 
-    print("Data shape:", data.shape)  # Проверяем размерность
+    print("Data shape:", data.shape) 
 
     # Данные должны быть 2D (количество объектов, количество признаков)
     if data.ndim != 2 or data.shape[1] < 2:
         print("Error: Data should have at least 2 features.")
         return
 
-    # Берем только первые два признака
     X = data[:, :2]
     
     # Isolation Forest

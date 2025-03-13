@@ -34,7 +34,6 @@ def measure_typing_speed():
     end_time = time.time()
     elapsed_time = end_time - start_time
 
-    # Проверка деления на ноль
     if elapsed_time == 0:
         elapsed_time = 1  # Предотвращаем деление на ноль
 

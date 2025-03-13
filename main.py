@@ -14,15 +14,14 @@ def main():
     
     record_user_behavior(username)
     
-    # ⬇️ Загружаем поведенческие данные
     data = get_user_behavior_data(user_id)
-    print("Fetched data:", data)  # Проверь, что загружаются правильные данные
+    print("Fetched data:", data) 
     6
     if not data:
         print(f"No behavior data found for user_id: {user_id}")
         return
     
-    analyze_behavior(data)  # Теперь передаем список [(feature1, feature2, feature3, feature4), ...]
+    analyze_behavior(data)  
 
 if __name__ == "__main__":
     main()
